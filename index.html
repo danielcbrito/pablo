@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- FIM GOOGLE FONTES -->
+
+       <!-- Favicon -->
+       <link rel="icon" type="image/x-icon" href="logo/pixelcut-export (32).png">
+       
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- FIM BOOTSTRAP ICONS -->
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FIM FONT AWESOME -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Daniel Brito</title>
+    <style>
+        /* Estilos para o menu mobile */
+        .menu-mobile {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            /* Escondido fora da tela */
+            width: 300px;
+            /* Largura do menu */
+            height: 100%;
+            background-color: #333;
+            /* Cor de fundo */
+            color: #fff;
+            /* Cor do texto */
+            z-index: 1000;
+            /* Garante que esteja acima de outros elementos */
+            transition: left 0.3s ease;
+            /* Animação para abrir/fechar */
+            overflow-y: auto;
+            /* Adiciona barra de rolagem se necessário */
+        }
+
+        .menu-mobile.abrir-menu {
+            left: 0;
+            /* Mostra o menu */
+        }
+
+        .menu-mobile .btn-fechar {
+            text-align: right;
+            padding: 10px;
+        }
+
+        .menu-mobile .btn-fechar i {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-mobile nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-mobile nav ul li {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #555;
+        }
+
+        .menu-mobile nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            /* Garante que o link preencha todo o espaço */
+        }
+
+        /* Estilos para o overlay */
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            z-index: 999;
+            /* Abaixo do menu mobile */
+            display: none;
+            /* Inicialmente escondido */
+        }
+
+        /* Esconde o botão de contato no menu desktop em telas menores */
+        @media (max-width: 768px) {
+          .menu-desktop {
+            display: none;
+          }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#Início">
+                    <img src="img/pixelcut-export__32_-removebg-preview.png" alt="Logo da Agência BRN">
+                </a>
+            </div>
+            <!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#Início">Início</a></li>
+                    <li><a href="#Especialidades">Especialidades</a></li>
+                    <li><a href="#Sobre">Sobre</a></li>
+                    <li><a href="#Projetos">Projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="https://wa.me/5511982573707">
+                    <button>Contato</button>
+                </a>
+            </div>
+            <!--btn-contato-->
+
+            <!-- Botão de contato fora do menu (antes do menu mobile) -->
+            <a href="https://wa.me/5511982573707" class="btn-contato-fora-menu">Contato</a>
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#Início">Início</a></li>
+                        <li><a href="#Especialidades">Especialidades</a></li>
+                        <li><a href="#Sobre">Sobre</a></li>
+                        <li><a href="#Projetos">Projetos</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=5511911782999&text&type=phone_number&app_absent=0">Contato</a></li> <!-- Adicionado o link de contato aqui -->
+                    </ul>
+                </nav>
+
+            </div>
+            <!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div>
+        <!--interface-->
+    </header>
+
+    <main>
+        <section class="topo-do-site" id="Início">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>Estratégia e Dados: Potencializando Negócios com Inteligência<span>.</span></h1>
+                        <p>Com visão estratégica e expertise em gestão de projetos, ajuda empresas a crescer de forma sustentável. Desenvolvo soluções digitais impactantes, otimizo processos e potencializo vendas para fortalecer</p>
+
+                    </div>
+                    <!--txt-topo-site-->
+
+                    <div class="img-topo-site">
+                        <img src="img/pessoa.png" alt="">
+                    </div>
+                    <!--img-topo-site-->
+                </div>
+                <!--flex-->
+            </div>
+            <!--interface-->
+        </section>
+        <!--topo-do-site-->
+
+        <section class="especiliadades" id="Especialidades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Analise de dados</h3>
+                        <p> Análise de dados especializada, transformando informações em insights estratégicos para decisões assertivas. Expertise em tendências, otimização de processos e relatórios precisos.</p>
+                    </div>
+                    <!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-currency-dollar"></i>
+                        <h3>Estratégia de Vendas e Negociação</h3>
+                        <p>Desenvolvimento de estratégias para aumentar vendas e posicionamento, com gestão eficiente
+                            de negociações e projetos.</p>
+                    </div>
+                    <!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-binoculars"></i>
+                        <h3>Gestão de Projetos e Resultados</h3>
+                        <p>Acompanhamento de projetos, implementação de sistemas de CRM e análise de desempenho para
+                            resultados mensuráveis ​​e sustentáveis.</p>
+                    </div>
+                    <!--especialidades-box-->
+                </div>
+                <!--flex-->
+            </div>
+            <!--interface-->
+        </section>
+        <!--especiliadades-->
+
+        <section class="sobre" id="Sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/foto.png" alt="">
+                    </div>
+                    <!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU PABLO SILVA.</span></h2>
+                        <p>
+                            Sou empresário e apaixonado por aprendizado contínuo. Estou constantemente evoluindo e adquirindo conhecimentos em gestão comercial, empresarial e estratégias de vendas, abrangendo tanto e-commerce quanto produtos físicos. Meu objetivo é transformar desafios em oportunidades, combinando inovação, estratégia e prática para ajudar negócios a crescerem de forma sustentável e eficiente.
+                           </p>
+                        <p> Com uma visão voltada para resultados, busco unir criatividade e planejamento para oferecer soluções que impulsionem o crescimento das empresas, sejam no universo digital ou físico. Acreditando no poder de um aprendizado constante, estou sempre em busca de novas ferramentas, técnicas e tendências para entregar valor e contribuir para o sucesso dos meus clientes.</p>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/danielbrito.emp/"><button><i
+                                        class="bi bi-instagram"></i></button></a>
+                            <a href="https://www.youtube.com/@PabloSilva-emp"><button><i
+                                        class="bi bi-youtube"></i></button></a>
+                            <a href="https://www.tiktok.com/@opablo2k"><button><i
+                                        class="bi bi-tiktok"></i></button></a>
+                            <a href="www.linkedin.com/in/daniel-cavalcante-brito-b59a48294"><button><i
+                                        class="bi bi-linkedin"></i></button></a>
+                        </div>
+                        <!--btn-social-->
+                    </div>
+                    <!--txt-sobre-->
+                </div>
+                <!--flex-->
+            </div>
+            <!--interface-->
+        </section>
+        <!--sobre-->
+
+       
+
+        <section class="cv">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>CURRÍCULO.</span></h2>
+                <p>Confira meu currículo para saber mais sobre minha experiência e habilidades profissionais.</p>
+                <a href="curiculo/ocurriculo-0784b826-6eb2-4564-826d-11151683bead (1).pdf" download>
+                    <button>Baixar Currículo</button>
+                </a>
+            </div>
+            <!--interface-->
+        </section>
+        <!--cv-->
+
+
+        <section class="portfolio" id="Projetos">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url(img/per_inline_edition15_data_strategies_mobile_pt_02.png);">
+                        <div class="overlay">Projeto 1</div>
+                    </div>
+                    <div class="img-port"
+                        style="background-image: url(img/Negociacao-586x1024.webp);">
+                        <div class="overlay">Projeto 2</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(img/imagem.jpg);">
+                        <div class="overlay">Projeto 3</div>
+                    </div>
+                </div>
+                <!--flex-->
+            </div>
+            <!--interface-->
+        </section>
+        <!--portfolio-->
+
+        <section class="formulario" id="Contato">
+            <div class="interface">
+                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+
+                <form action="https://formspree.io/f/mvgkaope" method="POST">
+                    <div class="hs-form-frame" data-region="na1"
+                        data-form-id="8de68d62-dd33-4336-a38d-997971eae830" data-portal-id="49542836"></div>
+                    ">
+                    <input type="text" name="nome" placeholder="Seu nome completo:" required>
+                    <input type="email" name="email" placeholder="Seu e-mail:" required>
+                    <input type="tel" name="telefone" placeholder="Seu celular:">
+                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                </form>
+            </div>
+            <!--interface-->
+        </section>
+        <!--formulario-->
+
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        
+                            alt="Logotipo Agência BRN">
+                    </div>
+                    <!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/pablosilva.emp/"><button><i
+                                        class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.youtube.com/@danielbrito-emp"><button><i
+                                        class="bi bi-youtube"></i></button></a>
+                        <a href="https://www.tiktok.com/@danielbrito.mkt"><button><i
+                                        class="bi bi-tiktok"></i></button></a>
+                        <a href="www.linkedin.com/in/daniel-cavalcante-brito-b59a48294"><button><i
+                                        class="bi bi-linkedin"></i></button></a>
+                    </div>
+                    <!--btn-social-->
+                </div>
+            </div>
+            <!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a
+                        href="mailto:contato@bruno.com.br">
+                        pablosilva.empree@gmail.com</a></p>
+            </div>
+            <!--line-footer-->
+        </div>
+        <!--interface-->
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMobile = document.getElementById('menu-mobile');
+        const overlayMenu = document.getElementById('overlay-menu');
+        const btnFechar = document.querySelector('.menu-mobile .btn-fechar');
+
+        btnMenu.addEventListener('click', () => {
+            menuMobile.classList.add('abrir-menu');
+            overlayMenu.style.display = 'block'; // Mostra o overlay
+        });
+
+        btnFechar.addEventListener('click', () => {
+            menuMobile.classList.remove('abrir-menu');
+            overlayMenu.style.display = 'none'; // Esconde o overlay
+        });
+
+        overlayMenu.addEventListener('click', () => {
+            menuMobile.classList.remove('abrir-menu');
+            overlayMenu.style.display = 'none'; // Esconde o overlay
+        });
+    </script>
+
+</body>
+
+</html>
