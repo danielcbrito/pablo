@@ -32,6 +32,22 @@ body {
     transition: .2s;
 }
 
+
+.btn-contatu button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #3498db; /* Azul */
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+    transform: translateX(30px); /* Move 100 pixels para a direita */
+}
+
+
+
+
 h2.titulo {
     color: #fff;
     font-size: 38px;
@@ -580,10 +596,7 @@ header .btn-contato-fora-menu:hover {
     }
 
     /* CABEÇALHO */
-    .menu-desktop,
-    .btn-contato {
-        display: none; /* Esconde o menu desktop e o botão de contato original */
-    }
+   
 
     /* Mostra o botão de contato FORA do menu */
     header .btn-contato-fora-menu {
